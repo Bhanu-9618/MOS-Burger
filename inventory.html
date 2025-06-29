@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url(img/inventorybody);
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg " style="background-color: black;">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white; font-weight: 700;"  href="#">MOS BURGERS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" style="color: white; " aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="inventory.html">Store</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="orders.html">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="customer.html">Customers</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<center>
+  <div data-aos="zoom-in">
+    <h1 style="color: aliceblue; margin-top: 40px;" class="col-sm-12 col-md-12 col-lg-12">STORE MANAGEMENT</h1>
+    </div>
+    <a href="#form">
+    <input type="button"  value="Add Item +" style=" color: beige; background-color: black; font-size: 20px; padding-top : 8px; padding-bottom: 8px;" >
+    </a> 
+    <div data-aos="zoom-in"> 
+    <table  class="table table-striped table-hover col-sm-12 col-md-12 col-lg-12" style="width: 1000px; margin-top: 40px;" >
+   
+    <thead>
+    <tr>
+      <th>Item Code</th>
+      <th>Item Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Expire Date</th>
+      <th>Action</th>
+      
+
+    </tr>
+  </thead>
+
+  <tbody id="inventoryTable">
+    
+      
+    
+  </tbody>
+
+</table>
+</div>
+
+</center>
+
+
+
+<center>
+  <div data-aos="zoom-in">
+    <section id="form">
+
+        <form id="addItemForm" style="width: 500px; margin-top: 100px; " class="col-sm-12">
+  <div class="row mb-3">
+    <label for="itemcode" class="col-sm-2 col-form-label" style="color: aliceblue;">ItemCode</label>
+    <div class="col-sm-10">
+      <input type="Item Code" class="form-control" id="inputCode">
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <label for="itemname" class="col-sm-2 col-form-label" style="color: aliceblue;">ItemName</label>
+    <div class="col-sm-10">
+      <input type="Item Name" class="form-control" id="inputName">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="cat" class="col-sm-2 col-form-label" style="color: aliceblue;">Category</label>
+    <div class="col-sm-10">
+      <input type="category" class="form-control" id="inputcategory">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="Price" class="col-sm-2 col-form-label" style="color: aliceblue;">Price</label>
+    <div class="col-sm-10">
+      <input type="price" class="form-control" id="inputprice">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="qty" class="col-sm-2 col-form-label" style="color: aliceblue;">Quantity</label>
+    <div class="col-sm-10">
+      <input type="qty" class="form-control" id="inputQuantity">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="Expire" class="col-sm-2 col-form-label" style="color: aliceblue;">ExpireDate</label>
+    <div class="col-sm-10">
+      <input type="exp" class="form-control" id="inputexp">
+    </div>
+  </div>
+  
+  <button type="button" style=" color: beige; background-color: black; font-size: 20px; padding-top : 8px; padding-bottom: 8px; margin-bottom: 50px;" onclick="additems()">Add</button>
+</form>
+
+    </section>
+    </div>
+</center>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>
