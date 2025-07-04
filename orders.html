@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        body{
-            background-image: url(img/inventorybody);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-image: url(img/inventorybody);
+    }
+    .table-container {
+      overflow-x: auto;
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg " style="background-color: black;">
+<nav class="navbar navbar-expand-lg" style="background-color: black;">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color: white; font-weight: 700;"  href="#">MOS BURGERS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" style="color: white; font-weight: 700;" href="#">MOS BURGERS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" style="color: white; " aria-current="page" href="index.html">Home</a>
+          <a class="nav-link active" style="color: white;" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: white;" href="inventory.html">Store</a>
@@ -35,131 +39,108 @@
         <li class="nav-item">
           <a class="nav-link" style="color: white;" href="customer.html">Customers</a>
         </li>
-        
       </ul>
     </div>
   </div>
 </nav>
-<center>
-    <h1 data-aos="zoom-in" style="color: aliceblue; margin-top: 40px;" class="col-sm-12 col-md-12 col-lg-12">ORDER MANAGEMENT</h1>
-    
-</center>
 
-<center>
-  <input type="text" name="Search" id="Searchbox" placeholder="Search"  >
-  <input type="button" style=" color: beige; background-color: black; font-size: 15px;  margin-bottom: 50px; padding: 3px;" value="SEARCH" onclick="showresults()">
-</center>
+<div class="container text-center my-4">
+  <h1 data-aos="zoom-in" style="color: aliceblue;">ORDER MANAGEMENT</h1>
+</div>
 
-<center>
-  <table id="ResultTable"  class="table table-striped table-hover col-sm-12 col-md-12 col-lg-12" style="width: 1000px; margin-top: 40px;" >
-   
+<div class="container text-center mb-3">
+  <input type="text" name="Search" id="Searchbox" placeholder="Search">
+  <input type="button" style="color: beige; background-color: black; font-size: 15px; padding:3px;" value="SEARCH" onclick="showresults()">
+</div>
+
+<div class="container table-container mb-4">
+  <table id="ResultTable" class="table table-striped table-hover">
     <thead>
-    <tr>
-      <th>ItemCode</th>
-      <th>ItemName</th>
-      <th>Price Rs.</th>
-      <th>ExpireDate</th>
-   </tr>
-  </thead>
+      <tr>
+        <th>ItemCode</th>
+        <th>ItemName</th>
+        <th>Price Rs.</th>
+        <th>ExpireDate</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-  <tbody ></tbody>
-
- </table>
-</center>
-
-<center>
-    <section id="form">
-
-        <form id="addItemForm" style="width: 500px; margin-top: 100px; " class="col-sm-12">
-  <div class="row mb-3">
-    <label for="OrderID" class="col-sm-2 col-form-label" style="color: aliceblue;">OrderID</label>
-    <div class="col-sm-10">
-      <input type="OrderID" class="form-control" id="OrderID">
+<div class="container my-5" id="form">
+  <form id="addItemForm" style="max-width:500px; margin:auto;">
+    <div class="row mb-3">
+      <label for="OrderID" class="col-sm-4 col-form-label" style="color: aliceblue;">OrderID</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="OrderID">
+      </div>
     </div>
-  </div>
-  
-  <div class="row mb-3">
-    <label for="CustomerID" class="col-sm-2 col-form-label" style="color: aliceblue;">CustomerID</label>
-    <div class="col-sm-10">
-      <input type="CustomerID" class="form-control" id="CustomerID">
+    <div class="row mb-3">
+      <label for="CustomerID" class="col-sm-4 col-form-label" style="color: aliceblue;">CustomerID</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="CustomerID">
+      </div>
     </div>
-  </div>
-
-  <div class="row mb-3">
-    <label for="ItemCode" class="col-sm-2 col-form-label" style="color: aliceblue;">ItemCode</label>
-    <div class="col-sm-10">
-      <input type="ItemCode" class="form-control" id="ItemCode">
+    <div class="row mb-3">
+      <label for="ItemCode" class="col-sm-4 col-form-label" style="color: aliceblue;">ItemCode</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="ItemCode">
+      </div>
     </div>
-  </div>
-
-  <div class="row mb-3">
-    <label for="ItemName" class="col-sm-2 col-form-label" style="color: aliceblue;">ItemName</label>
-    <div class="col-sm-10">
-      <input type="ItemName" class="form-control" id="ItemName">
+    <div class="row mb-3">
+      <label for="ItemName" class="col-sm-4 col-form-label" style="color: aliceblue;">ItemName</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="ItemName">
+      </div>
     </div>
-  </div>
-
-  <div class="row mb-3">
-    <label for="Price" class="col-sm-2 col-form-label" style="color: aliceblue;">Price</label>
-    <div class="col-sm-10">
-      <input type="Price" class="form-control" id="Price">
+    <div class="row mb-3">
+      <label for="Price" class="col-sm-4 col-form-label" style="color: aliceblue;">Price</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="Price">
+      </div>
     </div>
-  </div>
-
-  <div class="row mb-3">
-    <label for="Quantity" class="col-sm-2 col-form-label" style="color: aliceblue;">Quantity</label>
-    <div class="col-sm-10">
-      <input type="Quantity" class="form-control" id="Quantity">
+    <div class="row mb-3">
+      <label for="Quantity" class="col-sm-4 col-form-label" style="color: aliceblue;">Quantity</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="Quantity">
+      </div>
     </div>
-  </div>
-
-  <div class="row mb-3">
-    <label for="Discount" class="col-sm-2 col-form-label" style="color: aliceblue;">Discount%</label>
-    <div class="col-sm-10">
-      <input type="Discount" class="form-control" id="Discount">
+    <div class="row mb-3">
+      <label for="Discount" class="col-sm-4 col-form-label" style="color: aliceblue;">Discount%</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="Discount">
+      </div>
     </div>
-  </div>
+    <button type="button" style="color: beige; background-color: black; font-size:20px; padding:8px; margin-bottom:50px;" onclick="addtocart(); addtoreport()">Add to Cart</button>
+  </form>
+</div>
 
-  <button type="button" style=" color: beige; background-color: black; font-size: 20px; padding-top : 8px; padding-bottom: 8px; margin-bottom: 50px;" onclick="addtocart(); addtoreport()" >Add to Cart</button>
-  
-</form>
+<div class="container text-center mt-5">
+  <h1 style="color: aliceblue;">Cart</h1>
+</div>
 
-    </section>
-
-</center>
-
-<center>
-  <h1 style="color: aliceblue; margin-top: 40px;" class="col-sm-12 col-md-12 col-lg-12">Cart</h1>
-</center>
-
-<center>
-  <table  class="table table-striped table-hover col-sm-12 col-md-12 col-lg-12" style="width: 1000px; margin-top: 40px;" >
-   
+<div class="container table-container mb-5">
+  <table class="table table-striped table-hover">
     <thead>
-    <tr>
-      <th>OrderID</th>
-      <th>CustomerID</th>
-      <th>ItemCode</th>
-      <th>ItemName</th>
-      <th>Price Rs.</th>
-      <th>Quantity</th>
-      <th>Action</th>
+      <tr>
+        <th>OrderID</th>
+        <th>CustomerID</th>
+        <th>ItemCode</th>
+        <th>ItemName</th>
+        <th>Price Rs.</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="CartTable"></tbody>
+  </table>
+</div>
 
-    </tr>
-  </thead>
-
-  <tbody id="CartTable"></tbody>
-
- </table>
-</center>
- 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app2.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app2.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
-    
 </body>
 </html>
